@@ -10,3 +10,6 @@ Neo는 '새로운'이라는 뜻을 가지고 있으며, XOPS의 새로운 시작
 - [ ] Joypad
 - [ ] Networking
 - [ ] glTF/glB (First Priority)
+
+## Reference
+- [OpenSiv3Dでフレームレートを60fps以外に固定する方法(FrameRateLimitアドオン)](https://qiita.com/m4saka/items/5da6cd4b57bc894d35dd#comments "OpenSiv3Dでフレームレートを60fps以外に固定する方法(FrameRateLimitアドオン)")
