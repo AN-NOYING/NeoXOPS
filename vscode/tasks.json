@@ -1,0 +1,67 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "DEBUG",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++20",
+				"-g",
+				"-I${workspaceFolder}/inc",
+				"${workspaceFolder}/src/WinMain.cpp",
+				"${workspaceFolder}/src/Scene/SceneManager.cpp",
+				"${workspaceFolder}/src/System/Application.cpp",
+				"${workspaceFolder}/src/System/FPSLimiter.cpp",
+				"${workspaceFolder}/src/System/Window.cpp",
+				"${workspaceFolder}/src/Graphics/D3DGraphics.cpp",
+				"-o",
+				"${workspaceFolder}/bin/Debug/NeoXOPS.exe",
+				"-ld3d11",
+				"-ldxgi",
+				"-ld3dcompiler",
+				"-lwinmm",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Debug build with symbols"
+		},
+		{
+			"type": "cppbuild",
+			"label": "RELEASE",
+			"command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-std=c++20",
+				"-O2",
+				"-I${workspaceFolder}/inc",
+				"${workspaceFolder}/src/WinMain.cpp",
+				"${workspaceFolder}/src/Scene/SceneManager.cpp",
+				"${workspaceFolder}/src/System/Application.cpp",
+				"${workspaceFolder}/src/System/FPSLimiter.cpp",
+				"${workspaceFolder}/src/System/Window.cpp",
+				"${workspaceFolder}/src/Graphics/D3DGraphics.cpp",
+				"-o",
+				"${workspaceFolder}/bin/Release/NeoXOPS.exe",
+				"-ld3d11",
+				"-ldxgi",
+				"-ld3dcompiler",
+				"-lwinmm",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "Release build with optimization"
+		}
+	]
+}
