@@ -10,16 +10,44 @@ inline namespace neoxops {
         float X;            ///< X 좌표
         float Y;            ///< Y 좌표
 
+        /// @brief 기본 생성자
         constexpr Vector2F() noexcept : X(0.0f), Y(0.0f) {}
+
+        /// @brief 생성자
+        /// @param x X 좌표
+        /// @param y Y 좌표
         constexpr Vector2F(float x, float y) noexcept : X(x), Y(y) {}
-        constexpr Vector2F(const Vector2F&) noexcept = default;
+
+        /// @brief 복사 생성자
+        /// @param vec Vector2F
+        constexpr Vector2F(const Vector2F& vec) noexcept = default;
+
+        /// @brief 이동 생성자
+        /// @note 제거
         Vector2F(Vector2F&&) noexcept = delete;
         
+        /// @brief Zero
+        /// @return Vector2F
         static constexpr Vector2F Zero() { return { 0.0f, 0.0f }; }
+
+        /// @brief One
+        /// @return Vector2F
         static constexpr Vector2F One() { return { 1.0f, 1.0f }; }
+
+        /// @brief 상방
+        /// @return Vector2F
         static constexpr Vector2F Up() { return { 0.0f, 1.0f }; }
+
+        /// @brief 하방
+        /// @return Vector2F
         static constexpr Vector2F Down() { return { 0.0f, -1.0f}; }
+
+        /// @brief 좌
+        /// @return Vector2F
         static constexpr Vector2F Left() { return { -1.0f, 0.0f }; }
+
+        /// @brief 우
+        /// @return Vector2F
         static constexpr Vector2F Right() { return { 1.0f, 0.0f }; }
 
         /// @brief 근사 비교
@@ -66,7 +94,7 @@ inline namespace neoxops {
         /// @param end 종료
         /// @param t 보간 계수 (0.0 ~ 1.0)
         /// @return Vector2F
-        static Vector2F Lerp(const Vector2F& start, const Vector2F& end, float t) noexcept {
+        static constexpr Vector2F Lerp(const Vector2F& start, const Vector2F& end, float t) noexcept {
             t = std::clamp(t, 0.0f, 1.0f);
             return { start.X + (end.X - start.X) * t, start.Y + (end.Y - start.Y) * t };
         }
@@ -75,7 +103,7 @@ inline namespace neoxops {
         /// @param lhs Vector2F
         /// @param rhs Vector2F
         /// @return Vector2F
-        static Vector2F Min(const Vector2F& lhs, const Vector2F& rhs) noexcept {
+        static constexpr Vector2F Min(const Vector2F& lhs, const Vector2F& rhs) noexcept {
             return {
                 lhs.X < rhs.X ? lhs.X : rhs.X,
                 lhs.Y < rhs.Y ? lhs.Y : rhs.Y
@@ -86,7 +114,7 @@ inline namespace neoxops {
         /// @param lhs Vector2F
         /// @param rhs Vector2F
         /// @return Vector2F
-        static Vector2F Max(const Vector2F& lhs, const Vector2F& rhs) noexcept {
+        static constexpr Vector2F Max(const Vector2F& lhs, const Vector2F& rhs) noexcept {
             return {
                 lhs.X > rhs.X ? lhs.X : rhs.X,
                 lhs.Y > rhs.Y ? lhs.Y : rhs.Y
@@ -95,7 +123,7 @@ inline namespace neoxops {
 
 		/// @brief 정규화
 		/// @return Vector2F
-		Vector2F Normalize() const noexcept {
+		constexpr Vector2F Normalize() const noexcept {
 			float length = std::sqrtf((X*X) + (Y*Y));
 			return (length > 1e-6f) ? (*this / length) : Vector2F{ 0.0f, 0.0f };
 		}

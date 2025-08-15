@@ -1,7 +1,7 @@
 #pragma once
 
 #include <chrono>
-#include "Types.hpp"
+#include "../Type/Types.hpp"
 
 inline namespace neoxops {
     namespace system {

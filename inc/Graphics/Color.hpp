@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Types.hpp"
+#include "../Type/Types.hpp"
 
 inline namespace neoxops {
     namespace graphics {
